@@ -4,7 +4,7 @@
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script src="http://cdn.jquerytools.org/1.2.7/full/jquery.tools.min.js"></script>
         <script src="../../flash/flowplayer-3.2.13.js"></script>
-        <link href="http://www.helixfossil.tv/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+        <link href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
         <script>
             function btn(dn) {
                 $(document).ready(function() {
@@ -69,11 +69,6 @@
         <div id="title" class="navbar navbar-inverse navbar-fixed-top">
             <div class="navbar-inner">
                 <div class="container-fluid">
-                    <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
                     <a class="brand" href="http://www.helixfossil.tv">HelixFossil.tv</a>
                     <div class="nav-collapse collapse">
                         <ul class="nav">
@@ -89,10 +84,28 @@
                 <div class="span8">
                     <div class="hero-unit">
                         <h3>The name of the stream!</h3>
-                        <div id="stream" style="width:640px;height:480px;display:block;"></div>
+                        <div class="row-fluid">
+                            <div class="span8">
+                                <div id="stream" style="width:640px;height:480px;display:block;"></div>
+                            </div>
+                            <div class="span4">
+                                <div id="controls">
+                                    "z" = A<br/>
+                                    "x" = B<br/>
+                                    "w" = Up<br/>
+                                    "a" = Left<br/>
+                                    "s" = Down<br/>
+                                    "d" = Right<br/>
+                                    "q" = L<br/>
+                                    "e" = R<br/>
+                                    "b" = Start<br/>
+                                    "n" = Select<br/>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="span4">
+                <div class="span3">
                     <h3>Chat goes here!</h3>
                 </div>
             </div>
@@ -121,7 +134,7 @@
                             <button class="btn" id="l">l</button>
                             <button class="btn" id="r">r</button>
                             </div>
-                            <span class="pull-right" style="padding-right:5px">Last input: <span id="test">none!</span></span>
+                            <span class="pull-right" style="padding-right:9px">Last input: <span id="test">none!</span></span>
                         </div>
                     </div>
                 </div>
