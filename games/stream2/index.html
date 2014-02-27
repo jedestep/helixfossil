@@ -1,0 +1,87 @@
+<html>
+    <head>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="http://cdn.jquerytools.org/1.2.7/full/jquery.tools.min.js"></script>
+        <script src="../../flash/flowplayer-3.2.13.js"></script>
+        <script>
+            function btn(dn) {
+                $(document).ready(function() {
+                    $("#"+dn).click(function() {
+                        $.post("", "stream2 | " + dn, function(data, status) {
+                            $("#test").text(dn);
+                        });
+                    });
+                });
+            };
+            btn("a"); btn("b");
+            btn("left"); btn("right");
+            btn("up"); btn("down");
+            btn("start"); btn("select");
+            btn("l"); btn("r");
+
+            document.onkeypress = function(e) {
+                switch (e.keyCode) {
+                    case 97:
+                        $("#left").trigger("click"); break;
+                    case 98:
+                        $("#start").trigger("click"); break;
+                    case 100:
+                        $("#right").trigger("click"); break;
+                    case 101:
+                        $("#r").trigger("click"); break;
+                    case 110:
+                        $("#select").trigger("click"); break;
+                    case 113:
+                        $("#l").trigger("click"); break;
+                    case 115:
+                        $("#down").trigger("click"); break;
+                    case 119:
+                        $("#up").trigger("click"); break;
+                    case 120:
+                        $("#b").trigger("click"); break;
+                    case 122:
+                        $("#a").trigger("click"); break;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div id="buttons">
+        <button id="a">a</button>
+        <button id="b">b</button>
+        <button id="left">left</button>
+        <button id="right">right</button>
+        <button id="up">up</button>
+        <button id="down">down</button>
+        <button id="start">start</button>
+        <button id="select">select</button>
+        <button id="l">l</button>
+        <button id="r">r</button>
+        <div id="test">asdf</div>
+        </div>
+    <div id="stream" style="width:640px;height:480px;display:block">
+    </div>
+    <script>
+        $f("stream", "../../flash/flowplayer-3.2.18.swf", {
+            clip: {
+                url: 'teststream',
+                autoPlay: false,
+                live: true,
+                provider: 'rtmp'    
+            },
+
+            plugins: {
+                rtmp: {
+                    url: '../../flash/flowplayer.rtmp-3.2.13.swf',
+                    netConnectionUrl: 'rtmp://rtmp.helixfossil.tv'
+                },
+                controls: {
+                    url: '../../flash/flowplayer.controls-3.2.16.swf',
+                    play: true,
+                    scrubber: true
+                }
+            }
+        });
+    </script>
+    </body>
+</html>
