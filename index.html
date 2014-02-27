@@ -1,4 +1,5 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
     <head>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script src="http://cdn.jquerytools.org/1.2.7/full/jquery.tools.min.js"></script>
@@ -8,18 +9,6 @@
             body {
                 padding-top: 60px;
                 padding-bottom: 40px;
-            }
-
-            .sidebar-nav {
-                padding: 9px 0;
-            }
-
-            @media (max-width: 980px) {
-                .navbar-next.pull-right {
-                    float: none;
-                    padding-left: 5px;
-                    padding-left: 5px;
-                }
             }
         </style>
     </head>
@@ -37,6 +26,16 @@
             </div>
         </div>
 
-        
+        <div class="container">
+            <div class="row">
+                <h2>HelixFossil.tv</h2>
+                <form class="form-search" name="search" action="cgi/search.cgi" method="get">
+                    <div class="input-append">
+                        <input name="query" type="text" placeholder="Search for streams" class="input-xxlarge">
+                        <button type="submit" class="btn">Go</button>
+                    </div>
+                </form>
+            </div>
+        </div>        
     </body>
 </html>
